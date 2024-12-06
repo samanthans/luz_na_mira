@@ -33,7 +33,7 @@ unsigned long reactionTimeP1; // Time it takes for player to press button
 unsigned long reactionTimeP2;
 int scalingFactor = 400;
 int prev_pin_light;
-bool isReverse = false;
+bool isReverse = true;
 
 uint8_t row = 1;
 // Custom character arrays (0-7 for valid CGRAM addresses)
@@ -71,7 +71,7 @@ void setup() {
   lcd.begin(&Wire);
   lcd.display();
   lcd.backlight();
-
+  normal();
   for(int i = 0; i < 5; i++)
   {
     pinMode(player1leds[i], OUTPUT);
